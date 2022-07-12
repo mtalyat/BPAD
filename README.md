@@ -1,5 +1,7 @@
 #BPAD
+
 ##Introduction
+
 Behavior Pattern Authoring and Detection
 
 BPAD is a querying language, used specifically to find patterns within codes of behaviors. These codes can come from any type of software, so long as they are represented as strings and integers.
@@ -7,6 +9,18 @@ BPAD is a querying language, used specifically to find patterns within codes of 
 This library provides two basic functionalities. The first is parsing Patterns, and the other is evaluating them. To learn more, check out the **Getting Started** section below.
 
 ## Examples
+
+If we want a “Ask for information” pattern where a player asks for input, gets input from another player within 5 seconds, and then uses that input within 20 seconds…
+`Ask for input -> {5s}Acknowledge input -> {20s}Use input => Ask for information`
+
+If we want a “Panicking” pattern where a player gives a status update or asks for help, 2 or more times in a row within 4 seconds of each other…
+`{4s}Ask for help[2+] | {4s} Status update[2+] => Panicking`
+
+If we want a “Panicking” pattern where a player gives a status update, and then asks for help, or vice versa, within 4 seconds of each other…
+`(Ask for help | Status update) -> {4s}(Ask for help | Status update) => Panicking`
+
+If we want a “Detailed planning session” where a player gives a goal set and at least one define task, all within 1 minute of planning…
+`(Goal set & {5s}Define task[+]) -> {60s}Planning => Detailed planning session`
 
 ##Syntax
 
@@ -43,17 +57,3 @@ Examples:
 | ! | The behavior with this flag must not occur at all. |
 | ? | The behavior with this flag is optional, and may occur once, or not at all. |
 | * | The behavior with this flag is optional, and may occur any number of times, including not at all. |
-
-##Examples
-
-If we want a “Ask for information” pattern where a player asks for input, gets input from another player within 5 seconds, and then uses that input within 20 seconds…
-`Ask for input -> {5s}Acknowledge input -> {20s}Use input => Ask for information`
-
-If we want a “Panicking” pattern where a player gives a status update or asks for help, 2 or more times in a row within 4 seconds of each other…
-`{4s}Ask for help[2+] | {4s} Status update[2+] => Panicking`
-
-If we want a “Panicking” pattern where a player gives a status update, and then asks for help, or vice versa, within 4 seconds of each other…
-`(Ask for help | Status update) -> {4s}(Ask for help | Status update) => Panicking`
-
-If we want a “Detailed planning session” where a player gives a goal set and at least one define task, all within 1 minute of planning…
-`(Goal set & {5s}Define task[+]) -> {60s}Planning => Detailed planning session`
