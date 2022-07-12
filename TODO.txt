@@ -1,0 +1,10 @@
+﻿TODO:
+
+* Finish documentation in every file
+* Clean up debugging from OR and AND
+* Fix naming conventions on EvaluationArgs
+
+* Range.Parse for string[] when parsing
+* Clean up parsing classes
+
+* float.TryParse instead of float.Parse in all instances
