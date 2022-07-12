@@ -57,3 +57,7 @@ Examples:
 | ! | The behavior with this flag must not occur at all. |
 | ? | The behavior with this flag is optional, and may occur once, or not at all. |
 | * | The behavior with this flag is optional, and may occur any number of times, including not at all. |
+
+## Getting Started
+
+WIP. If you need help, please email mtalyat@iastate.edu.
