@@ -1,6 +1,6 @@
-#BPAD
+# BPAD
 
-##Introduction
+## Introduction
 
 Behavior Pattern Authoring and Detection
 
@@ -10,19 +10,19 @@ This library provides two basic functionalities. The first is parsing Patterns, 
 
 ## Examples
 
-If we want a “Ask for information” pattern where a player asks for input, gets input from another player within 5 seconds, and then uses that input within 20 seconds…
+If we want a “Ask for information” pattern where a player asks for input, gets input from another player within 5 seconds, and then uses that input within 20 seconds...
 `Ask for input -> {5s}Acknowledge input -> {20s}Use input => Ask for information`
 
-If we want a “Panicking” pattern where a player gives a status update or asks for help, 2 or more times in a row within 4 seconds of each other…
+If we want a “Panicking” pattern where a player gives a status update or asks for help, 2 or more times in a row within 4 seconds of each other...
 `{4s}Ask for help[2+] | {4s} Status update[2+] => Panicking`
 
-If we want a “Panicking” pattern where a player gives a status update, and then asks for help, or vice versa, within 4 seconds of each other…
+If we want a “Panicking” pattern where a player gives a status update, and then asks for help, or vice versa, within 4 seconds of each other...
 `(Ask for help | Status update) -> {4s}(Ask for help | Status update) => Panicking`
 
-If we want a “Detailed planning session” where a player gives a goal set and at least one define task, all within 1 minute of planning…
+If we want a “Detailed planning session” where a player gives a goal set and at least one define task, all within 1 minute of planning...
 `(Goal set & {5s}Define task[+]) -> {60s}Planning => Detailed planning session`
 
-##Syntax
+## Syntax
 
 ### Basics
 | Syntax | Meaning |
